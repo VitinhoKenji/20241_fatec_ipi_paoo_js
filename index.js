@@ -82,3 +82,45 @@
 //     console.log('oi, '+nome)
 // }
 // hello('Rodrigo')
+
+// function soma (a,b){
+//     return a + b
+// }
+// const resultado = soma(2,3)
+// console.log(resultado)
+// const dobro = function (n){
+//     return 2* n
+// }
+// const result = dobro(6)
+// console.log(result)
+
+// //valor padrão para um parâmetro
+// const triplo = function(n=5){
+//     return 3*n
+// }
+// console.log(triplo())
+// console.log(triplo(10))
+
+// const f = () => {}
+// const umArgumento = n => {
+//     console.log(n)
+// }
+// const soUmaLinha = () => console.log('oi')
+// const teste1 = (a,b) => {
+//     return a+b
+// }
+// const teste2 = (a,b) => a+b
+
+const hello = () => console.log("Hello")
+hello()
+const dobro = (valor) => valor *2
+
+let triplo = (valor) => {
+    return valor *3
+}
+const ehPar = n => {n%2 === 0}
+console.log(ehPar(10))
+
+function f3 (){
+    
+}
