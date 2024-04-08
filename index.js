@@ -171,3 +171,52 @@
 // const resultadoDaG = g()
 // resultadoDaG()
 // g()()()
+
+// function f(){
+//     let nome = "João"
+//     function g(){
+//         console.log(nome)
+//     }
+//     g()
+// }
+// f()
+
+// function ola(){
+//     let nome = 'João'
+//     return function(){
+//         console.log(`Olá, ${nome}`)
+//     }
+// }
+
+// let olaResult = ola()
+// olaResult()
+
+// function saudacoesFactory(saudacoes, nome){
+//     return function(){
+//         console.log(`${saudacoes}, ${nome}`)
+//     }
+// }
+
+// let olaJoao = saudacoesFactory('Olá', 'João')
+// let tchauJoao = saudacoesFactory('Tchau', 'João')
+// olaJoao()
+// tchauJoao()
+
+// function eAgora(){
+//     let cont = 1
+//     function f1(){
+//         console.log(cont)
+//         cont++
+//     }
+//     cont++
+//     function f2(){
+//         console.log(cont)
+//     }
+//     return {f1,f2}
+// }
+
+// let eAgoraResult = eAgora()
+// eAgoraResult.f1()
+// eAgoraResult.f2()
+// eAgoraResult.f1()
+// eAgoraResult.f2()
