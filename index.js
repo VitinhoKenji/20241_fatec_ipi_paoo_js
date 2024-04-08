@@ -220,3 +220,22 @@
 // eAgoraResult.f2()
 // eAgoraResult.f1()
 // eAgoraResult.f2()
+
+// function f(){}
+
+// () => {}
+
+// a => {return a*2}
+
+// let f = a => a*2
+
+// function f (a){
+//     return a*2
+// }
+
+// www.exemplo.com.br/livros
+// GET 
+// funções que acessa a base e devolve os livros
+
+const app = express()
+app.get('/livros', () => {})
