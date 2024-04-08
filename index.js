@@ -111,16 +111,63 @@
 // }
 // const teste2 = (a,b) => a+b
 
-const hello = () => console.log("Hello")
-hello()
-const dobro = (valor) => valor *2
+// const hello = () => console.log("Hello")
+// hello()
+// const dobro = (valor) => valor *2
 
-let triplo = (valor) => {
-    return valor *3
-}
-const ehPar = n => {n%2 === 0}
-console.log(ehPar(10))
+// let triplo = (valor) => {
+//     return valor *3
+// }
+// const ehPar = n => {n%2 === 0}
+// console.log(ehPar(10))
 
-function f3 (){
+// function f3 (){
     
-}
+// }
+
+// public class Teste{
+//     public void m(){
+//     }
+//     public void testando(){
+//         var meuMetodo = m;
+//     }
+// // }
+// function executa(f){
+//     f()
+// }
+// executa(function(a,b){return a+b})
+
+// function produzUmaFuncao(a,b,operador){
+//     if(operador === '+')
+//     return function(a,b){
+//         a+b
+//     }
+//     if(operador ==='-')
+//     return (a,b) => a-b
+// }
+
+// let umaFuncao = function(){
+//     console.log ("Fui armazenada em uma variável")
+// }
+// umaFuncao()
+
+// function f(funcao){
+//     return funcao()
+// }
+// // f(function(){
+// //     console.log("Estou sendo passada para f...")
+// // })
+
+// function g(){
+//     function outraFuncao(){
+//         console.log("Fui definida por g")
+//         return () => {2}
+//     }
+//     return outraFuncao()
+// }
+
+// console.log(f(g)() + f(g)())
+
+// const resultadoDaG = g()
+// resultadoDaG()
+// g()()()
