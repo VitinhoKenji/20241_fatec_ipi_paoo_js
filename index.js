@@ -395,31 +395,90 @@
 //     console.log(resultado)
 // })
 
-const soma = (a,b)=>{
-    return new Promise((resolve,reject) => {
-        //se a e b forem positivos, chamar resolve passando a + b como parâmetro, caso contrário chamar reject passando texto "não use negativos" como parâmetro
-        if (a>0 && b>0)
-            resolve(a+b)
-        else 
-            reject('Não use negativos')
-    })
-}
+// const soma = (a,b)=>{
+//     return new Promise((resolve,reject) => {
+//         //se a e b forem positivos, chamar resolve passando a + b como parâmetro, caso contrário chamar reject passando texto "não use negativos" como parâmetro
+//         if (a>0 && b>0)
+//             resolve(a+b)
+//         else 
+//             reject('Não use negativos')
+//     })
+// }
 
-soma(2,7).then(res=> {
-    console.log(`Resultado: ${res}`)
-})
-.catch(erro=>console.log(`Erro> ${erro}`))
-soma(-2,5)
-.then(res=> {
-    console.log(`Resultado: ${res}`)
-    soma(2,9)
-    .then(res=> {
-        console.log(res)
-        soma(11,13)
-        .then(res=>console.log(res))
-        .catch(erro=>console.log(erro))
-    })
-    .catch(erro=>console.log(erro))
-})
-.catch(erro => console.log(`Erro: ${erro}`))
-//como faz o catch
+// soma(2,7).then(res=> {
+//     console.log(`Resultado: ${res}`)
+// })
+// .catch(erro=>console.log(`Erro> ${erro}`))
+// soma(-2,5)
+// .then(res=> {
+//     console.log(`Resultado: ${res}`)
+//     soma(2,9)
+//     .then(res=> {
+//         console.log(res)
+//         soma(11,13)
+//         .then(res=>console.log(res))
+//         .catch(erro=>console.log(erro))
+//     })
+//     .catch(erro=>console.log(erro))
+// })
+// .catch(erro => console.log(`Erro: ${erro}`))
+// //como faz o catch
+
+//1+2+3+...+n-2+n-1+n
+// function calculadoraDemorado(n){
+//     let res = 0
+//     for (let i=1; i<=n;i++) res +=1
+//     return res
+// }
+
+// const resultado = calculadoraDemorado(100)
+// console.log(resultado)
+// console.log('outra coisa qualquer')
+
+// function calculoDemorado(n){
+//     let p = new Promise(function(resolve, reject){
+//         let res =0
+//         for (let i=1; i<=n;i++) res +=1
+//         resolve(res)
+//     })
+//     return p
+// }
+
+// let minhaPromise = calculoDemorado(100)
+// //then (computação com sucesso)
+// //catch (computação com falha)
+// minhaPromise.then((resultado) => console.log(resultado))
+
+// function calculoRapidinho(n){
+//     return Promise.resolve((n/2) * (n+1))
+// }
+// calculoRapidinho(100).then(resultado => console.log(resultado))
+
+//verificar valor de n, se for negativo, cahamr reject passando "somente positivos"
+//caso contrário, continuar
+// function calculoDemorado(n){
+//     let p = new Promise(function(resolve, reject){
+//         if(n<0){
+//             reject('somente positivo')
+//         }else{
+//             let res =0
+//             for (let i = 1; i <= n; i++) res +=1
+//             resolve(res)
+//         }
+//     })
+//     return p
+// }
+
+// calculoDemorado(5)
+// .then(res => {
+//     console.log(res)
+//     calculoDemorado(6)
+//     .then(res=> {
+//         console.log(res)
+//         calculoDemorado(7)
+//         .then(res=>console.log(res))
+//     })
+// })
+// .catch(erro => console.log('Erro:' + erro))
+
+//OpenWeatherMap
