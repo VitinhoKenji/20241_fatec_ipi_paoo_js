@@ -355,26 +355,71 @@
 // setTimeout(f2, 0)
 // console.log('Fim do script principal')
 
-const fs = require('fs')
-const abrirArquivo = (nomeArquivo) => {
-    const exibirConteudo = (erro, conteudo) => {
-        if(erro){
-            console.log(`Erro: ${erro}`)
-        }
-        else{
-            console.log(conteudo.toString())
-            const resultado = +conteudo.toString() * 10
-            const finalizar = (erro) => {
-                if(!erro){
-                    console.log('Conteudo escrito com sucesso')
-                }
-                else{
-                    console.log('Escrita falhou')
-                }
-            }
-            fs.writeFile('resultado.txt', resultado.toString(), finalizar)
-        }
-    }
-    fs.readFile(nomeArquivo, exibirConteudo)
+// const fs = require('fs')
+// const abrirArquivo = (nomeArquivo) => {
+//     const exibirConteudo = (erro, conteudo) => {
+//         if(erro){
+//             console.log(`Erro: ${erro}`)
+//         }
+//         else{
+//             console.log(conteudo.toString())
+//             const resultado = +conteudo.toString() * 10
+//             const finalizar = (erro) => {
+//                 if(!erro){
+//                     console.log('Conteudo escrito com sucesso')
+//                 }
+//                 else{
+//                     console.log('Escrita falhou')
+//                 }
+//             }
+//             fs.writeFile('resultado.txt', resultado.toString(), finalizar)
+//         }
+//     }
+//     fs.readFile(nomeArquivo, exibirConteudo)
+// }
+// abrirArquivo('arquivo.txt')
+
+//1+2+3+...+n-2+n-1+n
+// const calculoDemorado = (n) => {
+//     let p = new Promise((resolve, reject) => {
+//         let res = 0
+//         for(let i=1;i<=n;i++)
+//             res += 1
+//         resolve(res)
+//     })
+//     return p
+// }   
+
+// const aux = calculoDemorado(3)
+// aux.then((resultado) => {
+//     console.log(resultado)
+// })
+
+const soma = (a,b)=>{
+    return new Promise((resolve,reject) => {
+        //se a e b forem positivos, chamar resolve passando a + b como parâmetro, caso contrário chamar reject passando texto "não use negativos" como parâmetro
+        if (a>0 && b>0)
+            resolve(a+b)
+        else 
+            reject('Não use negativos')
+    })
 }
-abrirArquivo('arquivo.txt')
+
+soma(2,7).then(res=> {
+    console.log(`Resultado: ${res}`)
+})
+.catch(erro=>console.log(`Erro> ${erro}`))
+soma(-2,5)
+.then(res=> {
+    console.log(`Resultado: ${res}`)
+    soma(2,9)
+    .then(res=> {
+        console.log(res)
+        soma(11,13)
+        .then(res=>console.log(res))
+        .catch(erro=>console.log(erro))
+    })
+    .catch(erro=>console.log(erro))
+})
+.catch(erro => console.log(`Erro: ${erro}`))
+//como faz o catch
