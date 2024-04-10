@@ -237,5 +237,75 @@
 // GET 
 // funções que acessa a base e devolve os livros
 
-const app = express()
-app.get('/livros', () => {})
+// const app = express()
+// app.get('/livros', () => {})
+
+//uma pessoa chamada João que tem 17 anos de idade
+
+//JSON: Javascript Object Notation
+// let pessoa = {
+//     nome: "João",
+//     idade: 17
+// }
+// //. e [] para acessar membros
+// console.log(pessoa.nome)
+// console.log(pessoa['idade'])
+
+//se chama Maria, tem 21 anos e mora na rua B, 14
+
+// let pessoa = {
+//     nome: "Maria",
+//     idade: 21,
+//     endereco: {
+//         logradouro: 'Rua B',
+//         numero: 14
+//     }
+// }
+
+// console.log(pessoa['endereco']['logradouro'])
+// console.log(pessoa.endereco.numero)
+// console.log(pessoa['endereco'].numero)
+// console.log(pessoa.endereco['logradouro'])
+
+//uma concessionaria tem CNPJ e endereço.
+//Ela possui alguns carros em estoque. Cada um deles
+//tem marca, modelo e ano de fabricação
+
+// let concessionaria = {
+//     CNPJ: 12345,
+//     endereco: {
+//         logradouro: "rua B",
+//         numero: 14,
+//         bairro: 'Vila'
+//     },
+//     carros: [
+//         {
+//             marca: "s",
+//             modelo: "x", 
+//             ano: 123
+//         },
+//         {
+//             marca: "w",
+//             modelo: 'd',
+//             ano:12
+//         }
+//     ]
+// }
+// for (let carro of concessionaria.carros){
+//     console.log(`Marca: ${carro.marca}. Modelo: ${carro.modelo}`)
+// }
+// //acessar a marca do segundo veículo
+// console.log(concessionaria.carros[1].marca)
+// console.log(concessionaria['carros'][0]['marca'])
+
+//calculadora faz soma e subtração, cada operação envovle dois operandos
+//soma deve utilizar arrow function, sem return
+//subtração deve ser funcao regular
+let calculadora = {
+    soma: (a,b) => a+b,
+    subtração: function(a,b){
+        return a-b
+    }
+}
+console.log(calculadora.soma(2,3))
+console.log(calculadora.subtração(2,3))
