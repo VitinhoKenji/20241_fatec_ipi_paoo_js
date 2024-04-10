@@ -301,11 +301,80 @@
 //calculadora faz soma e subtração, cada operação envovle dois operandos
 //soma deve utilizar arrow function, sem return
 //subtração deve ser funcao regular
-let calculadora = {
-    soma: (a,b) => a+b,
-    subtração: function(a,b){
-        return a-b
+// let calculadora = {
+//     soma: (a,b) => a+b,
+//     subtração: function(a,b){
+//         return a-b
+//     }
+// }
+// console.log(calculadora.soma(2,3))
+// console.log(calculadora.subtração(2,3))
+
+// console.log("Eu primeiro")
+// console.log("Agora eu")
+// console.log("Sempre vou ser a última...")
+
+// const a= 2+7
+// const b = 5
+// console.log(a+b)
+
+// function demorada(){
+//     //pegar o horário atual do sistem, e deslocar ele de 2 segundos no futuro
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while(new Date().getTime() <= atualMais2Segundos); //NO-OP: No operation
+//     const d = 8+4
+//     return d
+// }
+
+// const a = 2+5
+// const b = 5+9
+// const d = demorada()
+// const e = 2+a+b
+// console.log(e)
+// function demorada(){
+//     //pegar o horário atual do sistem, e deslocar ele de 2 segundos no futuro
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while(new Date().getTime() <= atualMais2Segundos); //NO-OP: No operation
+//     const d = 8+4
+//     return d
+// }
+
+// const a = 2+5
+// const b = 5+9
+// setTimeout(function(){
+//     const d = demorada()
+//     console.log('d: '+ d)
+// },500)
+// const e = 2+a+b
+// console.log('e: ' + e)
+
+// const f1 = () => console.log('f1')
+// const f2 = () => console.log('f2')
+
+// setTimeout(f1, 500)
+// setTimeout(f2, 0)
+// console.log('Fim do script principal')
+
+const fs = require('fs')
+const abrirArquivo = (nomeArquivo) => {
+    const exibirConteudo = (erro, conteudo) => {
+        if(erro){
+            console.log(`Erro: ${erro}`)
+        }
+        else{
+            console.log(conteudo.toString())
+            const resultado = +conteudo.toString() * 10
+            const finalizar = (erro) => {
+                if(!erro){
+                    console.log('Conteudo escrito com sucesso')
+                }
+                else{
+                    console.log('Escrita falhou')
+                }
+            }
+            fs.writeFile('resultado.txt', resultado.toString(), finalizar)
+        }
     }
+    fs.readFile(nomeArquivo, exibirConteudo)
 }
-console.log(calculadora.soma(2,3))
-console.log(calculadora.subtração(2,3))
+abrirArquivo('arquivo.txt')
